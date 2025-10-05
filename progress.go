@@ -9,7 +9,6 @@ import (
 type ProgressBar struct {
 	step int
 	count int
-	arrCount []int
 }
 
 func (p *ProgressBar) Start (count int) {
