@@ -24,9 +24,17 @@ func (p *ProgressBar) Step () {
 		p.step++
 		p.bar()
 	}
+
+	if p.step == p.count {
+		fmt.Println() 
+	}
 }
 
 func (p *ProgressBar) bar () {
+
+	if p.count == 0 {
+		return
+	}
 
 	percent := float64(p.step) / float64(p.count) * 100
 	bar := strings.Repeat("░", int(percent/10)) + strings.Repeat("-", 10-int(percent/10))
